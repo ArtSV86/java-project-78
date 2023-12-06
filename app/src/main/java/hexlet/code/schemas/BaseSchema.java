@@ -22,4 +22,3 @@ public class BaseSchema {
         return checks.values().stream().allMatch(check -> check.test(object));
     }
 }
-

@@ -106,5 +106,4 @@ public class ValidatorTest {
         testMap.put("key2", "value2");
         assertTrue(schema.isValid(testMap));
     }
-
-  }
+}
