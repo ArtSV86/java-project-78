@@ -8,7 +8,7 @@ import hexlet.code.schemas.StringSchema;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Main {
+public class Example {
     public static void main(String[] args) {
         Validator v = new Validator();
         StringSchema schema = v.string();
@@ -22,14 +22,19 @@ public class Main {
         System.out.println("schema.isValid(null)=" + schema.isValid(null)); // false
         System.out.println("schema.isValid(\"\")=" + schema.isValid("")); // false
         System.out.println("schema.isValid(5)=" + schema.isValid(5)); // false
-        System.out.println("schema.isValid(\"what does the fox say\")=" + schema.isValid("what does the fox say")); // true
+        System.out.println("schema.isValid(\"what does the fox say\")=" +
+                schema.isValid("what does the fox say")); // true
         System.out.println("schema.isValid(\"hexlet\")=" + schema.isValid("hexlet")); // true
 
-        System.out.println("schema.contains(\"wh\").isValid(\"what does the fox say\")=" + schema.contains("wh").isValid("what does the fox say")); // true
-        System.out.println("schema.contains(\"what\").isValid(\"what does the fox say\")=" + schema.contains("what").isValid("what does the fox say")); // true
-        System.out.println("schema.contains(\"whatthe\").isValid(\"what does the fox say\")=" + schema.contains("whatthe").isValid("what does the fox say")); // false
+        System.out.println("schema.contains(\"wh\").isValid(\"what does the fox say\")=" +
+                schema.contains("wh").isValid("what does the fox say")); // true
+        System.out.println("schema.contains(\"what\").isValid(\"what does the fox say\")=" +
+                schema.contains("what").isValid("what does the fox say")); // true
+        System.out.println("schema.contains(\"whatthe\").isValid(\"what does the fox say\")=" +
+                schema.contains("whatthe").isValid("what does the fox say")); // false
 
-        System.out.println("schema.isValid(\"what does the fox say\")=" + schema.isValid("what does the fox say")); // false
+        System.out.println("schema.isValid(\"what does the fox say\")=" +
+                schema.isValid("what does the fox say")); // false
         // Здесь уже false, так как добавлена еще одна проверка contains("whatthe")
 
 
@@ -81,19 +86,19 @@ public class Main {
         Validator validator3 = new Validator();
         MapSchema schema3 = validator3.map();
 
-    // shape позволяет описывать валидацию для значений каждого ключа объекта Map
-    // Создаем набор схем для проверки каждого ключа проверяемого объекта
-    // Для значения каждого ключа - своя схема
+        // shape позволяет описывать валидацию для значений каждого ключа объекта Map
+        // Создаем набор схем для проверки каждого ключа проверяемого объекта
+        // Для значения каждого ключа - своя схема
         Map<String, BaseSchema> schemas = new HashMap<>();
-    // Определяем схемы валидации для значений свойств "name" и "age"
-    // Имя должно быть строкой, обязательно для заполнения
+        // Определяем схемы валидации для значений свойств "name" и "age"
+        // Имя должно быть строкой, обязательно для заполнения
         schemas.put("name", v.string().required());
-    // Возраст должен быть положительным числом
+        // Возраст должен быть положительным числом
         schemas.put("age", v.number().positive());
-    // Настраиваем схему `MapSchema`
-    // Передаем созданный набор схем в метод shape()
+        // Настраиваем схему `MapSchema`
+        // Передаем созданный набор схем в метод shape()
         schema3.shape(schemas);
-    // Проверяем объекты
+        // Проверяем объекты
         Map<String, Object> human1 = new HashMap<>();
         human1.put("name", "Kolya");
         human1.put("age", 100);
