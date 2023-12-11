@@ -22,19 +22,19 @@ public class Example {
         System.out.println("schema.isValid(null)=" + schema.isValid(null)); // false
         System.out.println("schema.isValid(\"\")=" + schema.isValid("")); // false
         System.out.println("schema.isValid(5)=" + schema.isValid(5)); // false
-        System.out.println("schema.isValid(\"what does the fox say\")=" +
-                schema.isValid("what does the fox say")); // true
+        System.out.println("schema.isValid(\"what does the fox say\")="
+                           + schema.isValid("what does the fox say")); // true
         System.out.println("schema.isValid(\"hexlet\")=" + schema.isValid("hexlet")); // true
 
-        System.out.println("schema.contains(\"wh\").isValid(\"what does the fox say\")=" +
-                schema.contains("wh").isValid("what does the fox say")); // true
-        System.out.println("schema.contains(\"what\").isValid(\"what does the fox say\")=" +
-                schema.contains("what").isValid("what does the fox say")); // true
-        System.out.println("schema.contains(\"whatthe\").isValid(\"what does the fox say\")=" +
-                schema.contains("whatthe").isValid("what does the fox say")); // false
+        System.out.println("schema.contains(\"wh\").isValid(\"what does the fox say\")="
+                           + schema.contains("wh").isValid("what does the fox say")); // true
+        System.out.println("schema.contains(\"what\").isValid(\"what does the fox say\")="
+                           + schema.contains("what").isValid("what does the fox say")); // true
+        System.out.println("schema.contains(\"whatthe\").isValid(\"what does the fox say\")="
+                           + schema.contains("whatthe").isValid("what does the fox say")); // false
 
-        System.out.println("schema.isValid(\"what does the fox say\")=" +
-                schema.isValid("what does the fox say")); // false
+        System.out.println("schema.isValid(\"what does the fox say\")="
+                           + schema.isValid("what does the fox say")); // false
         // Здесь уже false, так как добавлена еще одна проверка contains("whatthe")
 
 
