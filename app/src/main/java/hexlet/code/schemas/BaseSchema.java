@@ -5,9 +5,6 @@ import java.util.Map;
 import java.util.function.Predicate;
 
 public class BaseSchema {
-    boolean isValid() {
-        return false;
-    }
     private final Map<String, Predicate<Object>> checks;
 
     protected BaseSchema() {

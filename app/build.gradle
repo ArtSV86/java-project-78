@@ -1,14 +1,12 @@
 plugins {
     id 'java'
-    id 'application'
     id 'checkstyle'
     id 'jacoco'
+    id "com.github.mrsarm.jshell.plugin" version "1.2.1"
 }
 
 group = 'hexlet.code'
 version = '1.0-SNAPSHOT'
-
-application { mainClass.set("hexlet.code.App") }
 
 repositories {
     mavenCentral()
